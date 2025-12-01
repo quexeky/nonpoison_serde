@@ -71,7 +71,7 @@ impl<'a, T: Serialize + for<'de> Deserialize<'de>> Deserialize<'a> for Mutex<T> 
                             if inner.is_some() {
                                 return Err(serde::de::Error::duplicate_field("inner"));
                             }
-                            inner = Some(map.next_value()?)
+                            inner = Some(map.next_value()?);
                         }
                     }
                 }
