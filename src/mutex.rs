@@ -84,7 +84,7 @@ impl<'a, T: Serialize + for<'de> Deserialize<'de>> Deserialize<'a> for Mutex<T> 
             "Mutex",
             &["inner"],
             MutexVisitor {
-                marker: std::marker::PhantomData::default(),
+                marker: std::marker::PhantomData,
             },
         )
     }
